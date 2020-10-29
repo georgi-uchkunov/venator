@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+
+    <link rel="stylesheet" href="..\css\template\_bootswatch.scss">
+    <link rel="stylesheet" href="..\css\template\_variables.scss">
+    <link rel="stylesheet" href="..\css\template\bootstrap.css">
+    <link rel="stylesheet" href="..\css\template\bootstrap.min.css">
+    <link rel="stylesheet" href="..\css\views\index.css">
+
+</head>
+
+<body>
+
+    <section class="landing">
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top" id="navbar">
+
+
+
+            <a class="navbar-brand" href="#">Venator</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">Home
+                        </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Locations
+                        </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Pricing
+                        </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#contacts">About
+                        </a></li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </nav>
+        <h2 class="big-text mt-3 font-weight-bold">Gift yourself an experience</h2>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="row mt-3">
+            <div class="col-md-4 contacts-col">
+                <h3 class="contacts-title mb-3">Get in touch</h3>
+                <p>Available always</p>
+                <p>
+                    <img class="location-image mr-2" src="../images/address-location.svg" alt="location">Plovdiv, BG
+                </p>
+                <p>
+                    <img class="phone-image mr-2" src="../images/mobile-phone-shake.svg" alt="phone">+35988 123 4567
+                </p>
+                <p>
+                    <img class="email-image mr-2" src="../images/attherate.svg" alt="email">customer_service@venator.com
+                </p>
+            </div>
+            <div class="col-md-8 mt-5 feedback-col">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" id="name" name="name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="email">Email address</label>
+                        <input class="form-control" id="email" name="email" type="email" required>
+                    </div>
+                </div>
+                <label for="comment">Comment</label>
+                <textarea class="form-control" id="comment" name="comments" rows="5" required></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group d-flex justify-content-end">
+                        <button id="sumbit-comment" type="button" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row social-media-row d-flex justify-content-center">
+            <p>You can also find us on</p>
+            <br>
+        </div>
+        <div class="row mb-2 d-flex justify-content-center">
+            <img class="social-media-image mr-3" src="../images/facebook-square.svg" alt="facebook">
+            <img class="social-media-image mr-3" src="../images/twitter-square.svg" alt="twitter">
+            <img class="social-media-image mr-3" src="../images/instagram-square.svg" alt="instagram">
+            <img class="social-media-image mr-3" src="../images/linkedin-square.svg" alt="linked in">
+        </div>
+    </section>
+
+
+    <div class="intro">
+        <div class="intro-text">
+            <h1 class="hide">
+                <span class="text text-white">Staying</span>
+            </h1>
+            <h1 class="hide mt-3">
+                <span class="text text-white">In Style</span>
+            </h1>
+            <h1 class="hide mt-3">
+                <span class="text text-white">Since 1899</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="slider"></div>
+
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+        crossorigin="anonymous"></script>
+    <script src="../javascript/index.js"></script>
+
+</body>
