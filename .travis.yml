@@ -5,7 +5,7 @@ dist: trusty
 
 #we add the java development kit (jdk)
 jdk:
-- openjdk11
+- openjdk1.8
 
 script:
 #We avoid this error :" the job exceeded the maximum log length and has been terminated "
