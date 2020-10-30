@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
   }
+  
+  p{
+  	margin: 0;
+  	padding: 0;
+  }
 
   .main{
       background: rgba(36, 38, 41, 0.975);
@@ -63,9 +68,58 @@
     justify-content: center;
     align-items: center;
   }
+  
+  .pool{
+  	background: black;
+    background-size: cover;
+    padding: 0rem;
+    margin: 0;
+  }
+  
+  .pool-heading{
+  	color: white;
+  }
+  
+  #pool-text{
+    color: white;
+    position: relative;
+    top: 7rem;
+    left: 7rem;
+  }
+  
+  .pool-image{
+    width: 73%;
+    height: 73%;
+    transform: translate(16%, 6%);
+  }
 
-  .contacts-col{
-    transform: translate(25%, 20%);
+  .pool-button{
+    color: white;
+    background: black;
+  }
+
+  .restaurant{
+    background-size: cover;
+    padding: 0rem;
+    margin: 0;
+  }
+
+  #restaurant-text{
+    top: 7rem;
+    text-align: right;
+    right: 7rem;
+  }
+
+  .restaurant-image{
+    width: 73%;
+    height: 73%;
+    transform: translate(15%, 17%);
+  }
+
+  #contacts-col{
+    position: relative;
+    top: 7rem;
+    left: 7rem;
   }
 
   .location-image{
@@ -83,8 +137,9 @@
     height: 1rem;
   }
 
-  .feedback-col{
-    transform: translate(-5%, -5%);
+  #feedback-col{
+    position: relative;
+    right: 3rem;
   }
 
   html{
@@ -98,6 +153,30 @@
 
   .social-media-row{
     padding-right: 1.5rem;
+  }
+
+  #facebook-image:hover{
+    content: url(../../images/facebook-square-color.svg);
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  #twitter-image:hover{
+    content: url(../../images/twitter-square-color.svg);
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  #instagram-image:hover{
+    content: url(../../images/instagram-square-color.svg);
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  #linkedin-image:hover{
+    content: url(../../images/linkedin-square-color.svg);
+    transform: scale(1.2);
+    cursor: pointer;
   }
 
   .slider {
