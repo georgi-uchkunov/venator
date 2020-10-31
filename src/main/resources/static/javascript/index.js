@@ -30,6 +30,12 @@ tl.fromTo(".big-text", {
 	opacity : 1,
 	duration : 1
 }, "-=1");
+tl.fromTo(".swiper-container", {
+	opacity : 0
+}, {
+	opacity : 1,
+	duration : 1
+})
 
 $(document).ready(function() {
 	$("a").on('click', function(event) {
@@ -48,6 +54,21 @@ $(document).ready(function() {
 AOS.init({
 	duration : 2300,
 })
+
+var swiper = new Swiper('.swiper-container', {
+	effect: 'coverflow',
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: 'auto',
+	coverflowEffect: {
+	  rotate: 20,
+	  stretch: 0,
+	  depth: 200,
+	  modifier: 1,
+	  slideShadows: true,
+	},
+	loop: true,
+  });
 
 $("#name").on('change', function() {
 	var $name = $("#name");

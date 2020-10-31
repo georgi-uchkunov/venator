@@ -6,6 +6,7 @@
 	<title>Index</title>
 
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 	<link rel="stylesheet" href="..\css\template\_bootswatch.scss">
 	<link rel="stylesheet" href="..\css\template\_variables.scss">
@@ -92,6 +93,32 @@
 		</div>
 	</section>
 
+	<section class="media">
+		<div class="row" data-aos="slide-up">
+			<h2 class="media-heading">Take a peek inside</h2>
+		</div>
+	</section>
+
+	<section class="media">
+		<div class="swiper-container" data-aos="slide-up">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img class="swiper-image" src="../images/hotel_room_three.jpg"
+						alt="fancy hotel picture"></div>
+				<div class="swiper-slide"><img class="swiper-image" src="../images/hotel_pool_day.jpg"
+						alt="fancy hotel picture returns"></div>
+				<div class="swiper-slide"><img class="swiper-image" src="../images/hotel_room.jpg"
+						alt="more fancy hotel pictures"></div>
+				<div class="swiper-slide"><img class="swiper-image" src="../images/hotel_pool_night.jpg"
+						alt="fancy hotel picture strikes back"></div>
+				<div class="swiper-slide"><img class="swiper-image" src="../images/hotel_glasses.jpg"
+						alt="fancy hotel picture continues"></div>
+				<div class="swiper-slide"><img class="swiper-image" src="../images/hotel_breakfast.jpg"
+						alt="fancy hotel picture races onwards"></div>
+			</div>
+		</div>
+		<div class="row mt-3"></div>
+	</section>
+
 	<section class="contacts" id="contacts">
 		<div class="row mt-3">
 			<div class="col-md-4 contacts-col" data-aos="fade-right" id="contacts-col">
@@ -124,7 +151,8 @@
 				</div>
 				<label for="comment">Comment</label>
 				<textarea class="form-control feedback form" id="comment" name="comments" rows="5" required></textarea>
-				<div class="invalid-feedback" id="comment-feedback">Please keep your comment from 3 to 255 characters long.</div>
+				<div class="invalid-feedback" id="comment-feedback">Please keep your comment from 3 to 255 characters
+					long.</div>
 				<br>
 				<div class="row">
 					<div class="col-md-12 form-group d-flex justify-content-end">
@@ -173,6 +201,7 @@
 		integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
 		crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="../javascript/index.js"></script>
 
 </body>

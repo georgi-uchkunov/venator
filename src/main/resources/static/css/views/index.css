@@ -116,6 +116,38 @@
     transform: translate(15%, 17%);
   }
 
+  .media{
+    background-color: black;
+    background-size: cover;
+    padding: 0rem;
+    margin: 0;
+  }
+
+  .media-heading{
+    color: white;
+    transform: translate(189%, 208%);
+  }
+
+  .swiper-container {
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-color: white;
+    background-size: cover;
+    width: 610px;
+    height: 310px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, black);
+  }
+
+  .swiper-image{
+    width: 610px;
+    height: 310px;
+  }
+
   #contacts-col{
     position: relative;
     top: 7rem;
