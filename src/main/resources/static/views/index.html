@@ -77,16 +77,16 @@
 			</div>
 			<div class="col-md-4 restaurant-text-col" data-aos="fade-left" id="restaurant-text">
 				<h2 class="restaurant-heading">Taste true delicacies</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-					auctor, mauris at tincidunt feugiat, est nisi porttitor purus,
-					vitae venenatis nisi lacus quis quam. Nam arcu ligula, tincidunt eu
-					sem nec, tempor facilisis arcu. Praesent elementum elit nec mauris
-					volutpat, ut pellentesque orci vulputate. Ut ac tortor ut tortor
-					vulputate ornare. Donec vel orci dolor. Integer vitae felis odio.
-					Pellentesque sit amet odio mi. Phasellus quis sollicitudin nulla,
-					in rhoncus sapien. Pellentesque sollicitudin commodo fringilla.
-					Integer consectetur scelerisque tellus, sit amet ullamcorper massa
-					accumsan sit amet.</p>
+				<p>Fusce malesuada sem volutpat feugiat gravida. Nam suscipit interdum erat, et fringilla elit imperdiet
+					id. Nullam ac urna et odio maximus laoreet at id lectus. Praesent ultricies, mi quis imperdiet
+					consequat, nisl est finibus sapien, vel posuere nisi lacus ac dui. Donec ac metus a ipsum lobortis
+					eleifend quis a ipsum. Ut eu turpis efficitur, vestibulum erat id, pulvinar nisi. Nullam aliquam
+					erat pretium euismod convallis. Donec eu diam mi. Nullam eleifend eros sed nisi scelerisque, at
+					tincidunt est dapibus. Integer hendrerit libero tellus, sit amet varius justo vulputate nec. Sed sed
+					imperdiet diam, sit amet egestas est. Aliquam id diam vehicula ante suscipit lacinia. In hac
+					habitasse platea dictumst. In pretium, ipsum a imperdiet tincidunt, sapien nulla tempus nunc, sit
+					amet vehicula turpis tortor sit amet augue. Etiam vestibulum interdum dui eget fringilla.
+				</p>
 				<button type="button" class="btn mt-3 btn-outline-dark restaurant-button">Learn more</button>
 			</div>
 		</div>
@@ -112,16 +112,19 @@
 			<div class="col-md-8 mt-5 feedback-col" data-aos="fade-left" id="feedback-col">
 				<div class="row">
 					<div class="col-sm-6 form-group">
-						<label for="name">Name</label> <input class="form-control" id="name" name="name" type="text"
-							required>
+						<label for="name">Name</label> <input class="form-control feedback-form" id="name" name="name"
+							type="text" required>
+						<div class="invalid-feedback" id="name-feedback">Please input your name.</div>
 					</div>
 					<div class="col-sm-6 form-group">
-						<label for="email">Email address</label> <input class="form-control" id="email" name="email"
-							type="email" required>
+						<label for="email">Email address</label> <input class="form-control feedback-form" id="email"
+							name="email" type="email" required>
+						<div class="invalid-feedback" id="email-feedback">Please enter a valid email.</div>
 					</div>
 				</div>
 				<label for="comment">Comment</label>
-				<textarea class="form-control" id="comment" name="comments" rows="5" required></textarea>
+				<textarea class="form-control feedback form" id="comment" name="comments" rows="5" required></textarea>
+				<div class="invalid-feedback" id="comment-feedback">Please keep your comment from 3 to 255 characters long.</div>
 				<br>
 				<div class="row">
 					<div class="col-md-12 form-group d-flex justify-content-end">
