@@ -36,6 +36,12 @@ tl.fromTo(".swiper-container", {
 	opacity : 1,
 	duration : 1
 })
+tl.fromTo(".testimonials-container", {
+	opacity : 0
+}, {
+	opacity : 1,
+	duration : 1
+})
 
 $(document).ready(function() {
 	$("a").on('click', function(event) {
@@ -64,6 +70,21 @@ var swiper = new Swiper('.swiper-container', {
 	  rotate: 20,
 	  stretch: 0,
 	  depth: 200,
+	  modifier: 1,
+	  slideShadows: true,
+	},
+	loop: true,
+  });
+
+  var swiperTestimonials = new Swiper('.testimonials-container', {
+	effect: 'coverflow',
+	grabCursor: true,
+	centeredSlides: true,
+	slidesPerView: 'auto',
+	coverflowEffect: {
+	  rotate: 0,
+	  stretch: 0,
+	  depth: 0,
 	  modifier: 1,
 	  slideShadows: true,
 	},
