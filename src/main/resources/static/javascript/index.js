@@ -73,7 +73,7 @@ var swiper = new Swiper('.swiper-container', {
 	  modifier: 1,
 	  slideShadows: true,
 	},
-	loop: true,
+	loop: true
   });
 
   var swiperTestimonials = new Swiper('.testimonials-container', {
@@ -82,13 +82,13 @@ var swiper = new Swiper('.swiper-container', {
 	centeredSlides: true,
 	slidesPerView: 'auto',
 	coverflowEffect: {
-	  rotate: 0,
+	  rotate: 20,
 	  stretch: 0,
-	  depth: 0,
+	  depth: 100,
 	  modifier: 1,
 	  slideShadows: true,
 	},
-	loop: true,
+	initialSlide: 3,
   });
 
 $("#name").on('change', function() {
