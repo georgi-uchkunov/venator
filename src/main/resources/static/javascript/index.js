@@ -67,53 +67,6 @@ AOS.init({
 	duration: 2300,
 })
 
-$(".focus-image-background").mouseleave(
-	function () {
-		$("#focus-title-one").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-two").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-three").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-four").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-	});
 
 $("#focus-image-one").hover(
 	function () {
@@ -125,46 +78,11 @@ $("#focus-image-one").hover(
 			'display': 'inline-block',
 			'position': 'absolute',
 			'top': '127%',
-			'left': '38%',
+			'left': '41%',
 			'-webkit-text-stroke': '0.5px #1a1a1a'
 		});
-		$("#focus-title-two").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-three").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-four").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-	});
-
-$("#focus-image-two").hover(
-	function () {
+	},
+	function(){
 		$("#focus-title-one").css({
 			'color': 'white',
 			'opacity': '0',
@@ -173,9 +91,13 @@ $("#focus-image-two").hover(
 			'display': 'inline-block',
 			'position': 'absolute',
 			'top': '127%',
-			'left': '38%',
+			'left': '41%',
 			'-webkit-text-stroke': '0.5px #1a1a1a'
 		});
+	});
+
+$("#focus-image-two").hover(
+	function () {
 		$("#focus-title-two").css({
 			'color': 'white',
 			'opacity': '1',
@@ -187,18 +109,9 @@ $("#focus-image-two").hover(
 			'left': '38%',
 			'-webkit-text-stroke': '0.5px #1a1a1a'
 		});
-		$("#focus-title-three").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-four").css({
+	},
+	function(){
+		$("#focus-title-two").css({
 			'color': 'white',
 			'opacity': '0',
 			'border-bottom': '4px solid white',
@@ -213,28 +126,6 @@ $("#focus-image-two").hover(
 
 $("#focus-image-three").hover(
 	function () {
-		$("#focus-title-one").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-two").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
 		$("#focus-title-three").css({
 			'color': 'white',
 			'opacity': '1',
@@ -243,10 +134,12 @@ $("#focus-image-three").hover(
 			'display': 'inline-block',
 			'position': 'absolute',
 			'top': '127%',
-			'left': '38%',
+			'left': '35%',
 			'-webkit-text-stroke': '0.5px #1a1a1a'
 		});
-		$("#focus-title-four").css({
+	},
+	function(){
+		$("#focus-title-three").css({
 			'color': 'white',
 			'opacity': '0',
 			'border-bottom': '4px solid white',
@@ -254,46 +147,13 @@ $("#focus-image-three").hover(
 			'display': 'inline-block',
 			'position': 'absolute',
 			'top': '127%',
-			'left': '38%',
+			'left': '35%',
 			'-webkit-text-stroke': '0.5px #1a1a1a'
 		});
 	});
 
 $("#focus-image-four").hover(
 	function () {
-		$("#focus-title-one").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-two").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
-		$("#focus-title-three").css({
-			'color': 'white',
-			'opacity': '0',
-			'border-bottom': '4px solid white',
-			'transition': '0.5s',
-			'display': 'inline-block',
-			'position': 'absolute',
-			'top': '127%',
-			'left': '38%',
-			'-webkit-text-stroke': '0.5px #1a1a1a'
-		});
 		$("#focus-title-four").css({
 			'color': 'white',
 			'opacity': '1',
@@ -302,7 +162,20 @@ $("#focus-image-four").hover(
 			'display': 'inline-block',
 			'position': 'absolute',
 			'top': '127%',
-			'left': '38%',
+			'left': '32%',
+			'-webkit-text-stroke': '0.5px #1a1a1a'
+		});
+	},
+	function(){
+		$("#focus-title-four").css({
+			'color': 'white',
+			'opacity': '0',
+			'border-bottom': '4px solid white',
+			'transition': '0.5s',
+			'display': 'inline-block',
+			'position': 'absolute',
+			'top': '127%',
+			'left': '32%',
 			'-webkit-text-stroke': '0.5px #1a1a1a'
 		});
 	});

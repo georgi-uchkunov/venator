@@ -420,13 +420,74 @@
     scroll-behavior: smooth;
   }
 
+  .footer{
+    background: #1a1a1a;
+    color: white;
+    background-size: cover;
+    padding: 0rem;
+    margin: 0;
+  }
+
+  .policies-row{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+  }
+
+  .policy-link{
+    font-size: 17px;
+    margin-right: 3rem;
+  }
+
+  .policy-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .brand-row{
+    display: flex;
+    justify-content: center;
+    padding-top: 19px;
+    margin-right: 29px;
+  }
+
+  .logo-footer{
+    width: 29px;
+    height: 29px;
+  }
+
+  .brand-title{
+    font-size: 27px;
+    margin-left: 6px;
+    font-style: bold;
+  }
+
+  .z-row{
+    display: flex;
+    justify-content: center;
+  }
+
+  .z-text{
+    font-size: 13px;
+  }
+
   .social-media-image{
     width: 2rem;
     height: 2rem;
   }
 
   .social-media-row{
+    display: flex;
+    justify-content: center;
+    padding-top: 17px;
+    margin-bottom: 15px;
     padding-right: 1.5rem;
+  }
+
+  .social-icons-row{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17px;
   }
 
   #facebook-image:hover{
