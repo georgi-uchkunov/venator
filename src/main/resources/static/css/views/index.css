@@ -28,6 +28,12 @@
     height: 71px;
   }
 
+  .logo-navbar{
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+  }
+
   .nav-links {
     display: flex;
     list-style: none;
@@ -431,17 +437,25 @@
   .policies-row{
     display: flex;
     justify-content: center;
-    padding-top: 1.5rem;
+    padding-top: 16px;
+    margin-right: 19px;
+    margin-left: 18px;
+    padding-bottom: 19px;
+  }
+
+  .policies-col{
+    margin-right: 19px;
+    margin-left: 18px;
   }
 
   .policy-link{
     font-size: 17px;
+    color: white;
     margin-right: 3rem;
   }
 
   .policy-link:hover{
-    text-decoration: underline;
-    cursor: pointer;
+    color: white;
   }
 
   .brand-row{
@@ -449,6 +463,7 @@
     justify-content: center;
     padding-top: 19px;
     margin-right: 29px;
+    padding-bottom: 35px;
   }
 
   .logo-footer{
@@ -465,6 +480,16 @@
   .z-row{
     display: flex;
     justify-content: center;
+  }
+
+  .z1-row{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 17px;
+  }
+
+  .z1-text{
+    font-size: 13px;
   }
 
   .z-text{
@@ -487,7 +512,7 @@
   .social-icons-row{
     display: flex;
     justify-content: center;
-    margin-bottom: 17px;
+    padding-bottom: 16px;
   }
 
   #facebook-image:hover{
