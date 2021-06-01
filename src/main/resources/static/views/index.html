@@ -48,8 +48,8 @@
 
 	</nav>
 	<section class="landing" id="landing">
-		<h2 class="big-text mt-3 font-weight-bold">Gift yourself an
-			experience</h2>
+		<h2 class="big-text mt-3 font-weight-bold">Gift yourself an</h2>
+		<h2 class="big-text-two mt-3 font-weight-bold">experience</h2>
 		<div class="focus-images-box">
 			<div class="row focus-images-row">
 				<div class="focus-image-background" id="focus-image-one">
@@ -70,6 +70,32 @@
 				<h1 class="focus-title" id="focus-title-two">Locations</h1>
 				<h1 class="focus-title" id="focus-title-three">Event halls</h1>
 				<h1 class="focus-title" id="focus-title-four">Entertainment</h1>
+			</div>
+			<div class="row reservation-row">
+				<button type="button" class="btn reserve-button" data-target="#reservationModalOne">Reserve</button>
+			</div>
+		</div>
+
+		<div class="modal fade" id="reservationModalOne" tabindex="-1" role="dialog"
+			aria-labelledby="reservationModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<label for="name">Name</label> <input class="form-control feedback-form" id="name" name="name"
+							type="text" required>
+						<div class="invalid-feedback" id="name-feedback">Please input your name.</div>
+						<label for="name">Family</label> <input class="form-control feedback-form" id="name" name="name"
+							type="text" required>
+						<div class="invalid-feedback" id="name-feedback">Please input your family.</div>
+						<label for="email">Email address</label> <input class="form-control feedback-form" id="email"
+							name="email" type="email" required>
+						<div class="invalid-feedback" id="email-feedback">Please enter a valid email.</div>
+						<button type="button" class="btn next-button">Next</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

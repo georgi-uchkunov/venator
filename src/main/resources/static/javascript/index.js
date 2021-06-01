@@ -15,7 +15,7 @@ tl.to(".slider", {
 	delay: 0.5
 });
 tl.to(".intro", {
-	y: "-90%",
+	y: "-92%",
 	duration: 1
 }, "-=1");
 tl.fromTo("nav", {
@@ -30,11 +30,23 @@ tl.fromTo(".big-text", {
 	opacity: 1,
 	duration: 1
 }, "-=1");
+tl.fromTo(".big-text-two", {
+	opacity: 0
+}, {
+	opacity: 1,
+	duration: 1
+}, "-=1");
 tl.fromTo(".focus-images-box", {
 	opacity: 0
 }, {
 	opacity: 1,
 	duration: 1
+}, "-=1");
+tl.fromTo(".reservation-row", {
+	opacity : 0
+}, {
+	opacity : 1,
+	duration : 1
 }, "-=1");
 tl.fromTo(".swiper-container", {
 	opacity: 0
