@@ -1,0 +1,151 @@
+.modal-content{
+  background: #1a1a1a;
+  color: white;
+  text-align: justify;
+}
+
+#given-name{
+  margin-bottom: 1rem;
+}
+
+#reservation-email{
+  margin-bottom: 1rem;
+}
+
+#county-code{
+  height: calc(1.5em + 1.5rem);
+  width: 4.7rem;
+}
+
+.reservation-phone{
+  display: grid;
+  grid-template-columns: 4.7rem 23rem;
+  grid-gap: 1rem;
+}
+
+.form-outer{
+    width: 100%;
+    overflow: hidden;
+  }
+ .form-outer form{
+    display: flex;
+    width: 400%;
+  }
+  .form-outer form .page{
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  .form-outer form .page .title{
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .form-outer form .page .field{
+    width: 330px;
+    height: 45px;
+    margin: 45px 0;
+    display: flex;
+    position: relative;
+  }
+  form .page .field .label{
+    position: absolute;
+    top: -30px;
+    font-weight: 500;
+  }
+  form .page .field input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 18px;
+  }
+  form .page .field select{
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .progress-bar{
+    display: grid;
+    grid-template-columns: 5rem 5rem 5rem 5rem;
+    user-select: none;
+    margin-bottom: 2rem;
+  }
+  .progress-bar .step{
+    text-align: center;
+    width: 100%;
+    position: relative;
+  }
+  .progress-bar .step p{
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .progress-bar .step .bullet{
+    height: 25px;
+    width: 25px;
+    border: 2px solid white;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+  }
+  .progress-bar .step .bullet.active{
+    border-color: white;
+    background: white;
+  }
+  .progress-bar .step .bullet span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .progress-bar .step .bullet.active span{
+    display: none;
+  }
+  .progress-bar .step .bullet:before,
+  .progress-bar .step .bullet:after{
+    position: absolute;
+    content: '';
+    bottom: 11px;
+    right: -51px;
+    height: 3px;
+    width: 44px;
+    background: #262626;
+  }
+  .progress-bar .step .bullet.active:after{
+    background: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .progress-bar .step:last-child .bullet:before,
+  .progress-bar .step:last-child .bullet:after{
+    display: none;
+  }
+  .progress-bar .step p.active{
+    color: white;
+    transition: 0.2s linear;
+  }
+  .progress-bar .step .check{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  .progress-bar .step .check.active{
+    display: block;
+    color: #fff;
+  }
