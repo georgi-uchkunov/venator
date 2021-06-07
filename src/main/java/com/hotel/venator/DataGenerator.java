@@ -8,23 +8,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hotel.venator.models.Booking;
+import com.hotel.venator.models.Customer;
 import com.hotel.venator.models.Role;
+import com.hotel.venator.models.Room;
 import com.hotel.venator.models.User;
 import com.hotel.venator.repos.BookingRepository;
+import com.hotel.venator.repos.CustomerRepository;
 import com.hotel.venator.repos.RoleRepository;
+import com.hotel.venator.repos.RoomRepository;
 import com.hotel.venator.repos.UserRepository;
 
 @Component
 public class DataGenerator {
+
 	private RoleRepository roleRepository;
 	private UserRepository userRepository;
 	private BookingRepository bookingRepository;
+	private CustomerRepository customerRepository;
+	private RoomRepository roomRepository;
 
 	@Autowired
-	public DataGenerator(RoleRepository roleRepository, UserRepository userRepository, BookingRepository bookingRepository) {
+	public DataGenerator(RoleRepository roleRepository, UserRepository userRepository,
+			BookingRepository bookingRepository, CustomerRepository customerRepository, RoomRepository roomRepository) {
 		this.roleRepository = roleRepository;
 		this.userRepository = userRepository;
 		this.bookingRepository = bookingRepository;
+		this.customerRepository = customerRepository;
+		this.roomRepository = roomRepository;
 	}
 
 	@PostConstruct
@@ -40,10 +50,10 @@ public class DataGenerator {
 			userRepository.save(admin);
 		}
 	}
-	
+
 	@PostConstruct
 	public void loadExampleBooking() {
-		if(bookingRepository.count() == 0) {
+		if (bookingRepository.count() == 0) {
 			Booking exampleBooking = new Booking();
 			exampleBooking.setAdults((byte) 3);
 			exampleBooking.setCheckInDate(LocalDate.now());
@@ -56,6 +66,23 @@ public class DataGenerator {
 			exampleBooking.setPrice((short) 500);
 			exampleBooking.setServicePackage("Advanced");
 			bookingRepository.save(exampleBooking);
+		}
+	}
+
+	@PostConstruct
+	public void loadExampleCustomers() {
+		if (customerRepository.count() == 0) {
+			customerRepository.save(new Customer("Alice", "Smith"));
+			customerRepository.save(new Customer("Bob", "Smith"));
+		}
+	}
+
+	@PostConstruct
+	public void loadExampleRooms() {
+		if (roomRepository.count() == 0) {
+			roomRepository.save(new Room((byte) 10, (byte) 1, "Traditional", true));
+			roomRepository.save(new Room((byte) 20, (byte) 2, "Luxurious", false));
+			roomRepository.save(new Room((byte) 30, (byte) 3, "Imperial", true));
 		}
 	}
 
