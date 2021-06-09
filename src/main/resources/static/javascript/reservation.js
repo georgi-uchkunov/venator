@@ -42,7 +42,6 @@ submitBtn.addEventListener("click", function(){
   current += 1;
   setTimeout(function(){
     alert("Your Form Successfully Signed up");
-    location.reload();
   },800);
 });
 

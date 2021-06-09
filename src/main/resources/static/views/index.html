@@ -73,11 +73,35 @@
 				<h1 class="focus-title" id="focus-title-three">Event halls</h1>
 				<h1 class="focus-title" id="focus-title-four">Entertainment</h1>
 			</div>
-			<div class="row reservation-row">
-				<button data-toggle="modal" class="btn reserve-button"
-					data-target="#reservationModalOne">Reserve</button>
-			</div>
 		</div>
+
+		<div class = "book">
+            <form class = "book-form">
+                <div class = "form-item">
+                    <label for = "checkin-date">Check In Date: </label>
+                    <input type = "date" id = "checkin-date">
+                </div>
+                <div class = "form-item">
+                    <label for = "checkout-date">Check Out Date: </label>
+                    <input type = "date" id = "checkout-date">
+                </div>
+                <div class = "form-item">
+                    <label for = "adult">Adults: </label>
+                    <input type = "number" min = "1" value = "1" id = "adult">
+                </div>
+                <div class = "form-item">
+                    <label for = "children">Children: </label>
+                    <input type = "number" min = "0" value = "0" id = "children">
+                </div>
+                <div class = "form-item">
+                    <label for = "rooms">Rooms: </label>
+                    <input type = "number" min = "1" value = "1" id = "rooms">
+                </div>
+                <div class = "form-item">
+                    <button class="btn book-button btn-outline-light" data-toggle="modal" data-target="#reservationModalOne">Book now</button>
+                </div>
+            </form>
+        </div>
 
 		<div class="modal draggable fade" id="reservationModalOne" tabindex="-1" role="dialog"
 			aria-labelledby="reservationModalLabel" aria-hidden="true">
@@ -152,7 +176,7 @@
 										email.</div>
 									<label for="phone-number">Phone number</label>
 									<div class="reservation-phone">
-										<select name="county-code" id="county-code">
+										<select name="country-code" id="country-code">
 											<option data-countryCode="DZ" value="213">Algeria (+213)</option>
 											<option data-countryCode="AD" value="376">Andorra (+376)</option>
 											<option data-countryCode="AO" value="244">Angola (+244)</option>
@@ -446,7 +470,7 @@
 									</div>
 									<div class="field btns">
 										<button class="btn prev-3 prev btn-outline-light">Previous</button>
-										<button class="btn submit btn-outline-light">Submit</button>
+										<button class="btn submit btn-outline-light" id="submit-button">Submit</button>
 									</div>
 								</div>
 							</form>
@@ -455,6 +479,12 @@
 				</div>
 			</div>
 		</div>
+
+
+
+		
+
+
 	</section>
 
 	<section class="pool" id="pool">
@@ -864,5 +894,6 @@
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="../javascript/index.js"></script>
 	<script src="../javascript/reservation.js"></script>
+	<script src="../javascript/booking.js"></script>
 
 </body>

@@ -78,8 +78,7 @@
 				<configuration>
 					<appName>venator-hotel</appName>
 					<processTypes>
-						<web>java $JAVA_OPTS -jar -Dserver.port=$PORT
-							${full-artifact-name}</web>
+						<web>java $JAVA_OPTS -jar -Dserver.port=$PORT ${full-artifact-name}</web>
 					</processTypes>
 				</configuration>
 			</plugin>
