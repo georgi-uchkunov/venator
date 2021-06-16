@@ -62,8 +62,7 @@ public class DataGenerator {
 			exampleBooking.setCustomerEmail("adamjohnson@test.com");
 			exampleBooking.setCustomerFirstName("Adam");
 			exampleBooking.setCustomerLastName("Johnson");
-			exampleBooking.setCustomerPhoneNumber(885555555);
-			exampleBooking.setPrice((short) 500);
+			exampleBooking.setCustomerPhoneNumber("21312414");
 			exampleBooking.setServicePackage("Advanced");
 			bookingRepository.save(exampleBooking);
 		}

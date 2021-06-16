@@ -15,31 +15,38 @@ public class Booking implements Serializable {
 	public LocalDate checkOutDate;
 	public byte adults;
 	public byte children;
+	public short rooms;
 	public String servicePackage;
-	public short price;
-	
+
 	public String customerFirstName;
 	public String customerLastName;
 	public String customerEmail;
-	public int customerPhoneNumber;
+	public String customerPhoneNumber;
+	public String location;
+	public String nameCard;
+	public String numberCard;
 
 	public Booking() {
 
 	}
 
-	public Booking(LocalDate checkInDate, LocalDate checkOutDate, byte adults, byte children, String servicePackage,
-			short price, String customerFirstName, String customerLastName, String customerEmail, int customerPhoneNumber) {
+	public Booking(LocalDate checkInDate, LocalDate checkOutDate, byte adults, byte children, short rooms,
+			String servicePackage, String customerFirstName, String customerLastName, String customerEmail,
+			String customerPhoneNumber, String location, String nameCard, String numberCard) {
 		super();
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
 		this.adults = adults;
 		this.children = children;
+		this.rooms = rooms;
 		this.servicePackage = servicePackage;
-		this.price = price;
 		this.customerFirstName = customerFirstName;
 		this.customerLastName = customerLastName;
 		this.customerEmail = customerEmail;
 		this.customerPhoneNumber = customerPhoneNumber;
+		this.location = location;
+		this.nameCard = nameCard;
+		this.numberCard = numberCard;
 	}
 
 	public String getId() {
@@ -82,20 +89,20 @@ public class Booking implements Serializable {
 		this.children = children;
 	}
 
+	public short getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(short rooms) {
+		this.rooms = rooms;
+	}
+
 	public String getServicePackage() {
 		return servicePackage;
 	}
 
 	public void setServicePackage(String servicePackage) {
 		this.servicePackage = servicePackage;
-	}
-
-	public short getPrice() {
-		return price;
-	}
-
-	public void setPrice(short price) {
-		this.price = price;
 	}
 
 	public String getCustomerFirstName() {
@@ -122,14 +129,36 @@ public class Booking implements Serializable {
 		this.customerEmail = customerEmail;
 	}
 
-	public int getCustomerPhoneNumber() {
+	public String getCustomerPhoneNumber() {
 		return customerPhoneNumber;
 	}
 
-	public void setCustomerPhoneNumber(int customerPhoneNumber) {
+	public void setCustomerPhoneNumber(String customerPhoneNumber) {
 		this.customerPhoneNumber = customerPhoneNumber;
 	}
-	
-	
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getNameCard() {
+		return nameCard;
+	}
+
+	public void setNameCard(String nameCard) {
+		this.nameCard = nameCard;
+	}
+
+	public String getNumberCard() {
+		return numberCard;
+	}
+
+	public void setNumberCard(String numberCard) {
+		this.numberCard = numberCard;
+	}
 
 }

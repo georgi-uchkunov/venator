@@ -1,7 +1,31 @@
 .modal-content{
-  background: #1a1a1a;
-  color: white;
+  background: white;
+  color: #1a1a1a;
   text-align: justify;
+}
+
+.modal-body{
+  height: 25rem;
+}
+
+.first-next-field .firstNext{
+  margin-left: 380px;
+}
+
+.second-next{
+  margin-left: 263px;
+}
+
+.service-select{
+  margin-bottom: 1rem;
+}
+
+.third-next{
+  margin-left: 263px;
+}
+
+.btns-three{
+  transform: translate(0%, -45%);
 }
 
 #given-name{
@@ -10,6 +34,14 @@
 
 #reservation-email{
   margin-bottom: 1rem;
+}
+
+#name-card{
+  margin-bottom: 1rem;
+}
+
+#submit-button{
+  margin-left: 250px;
 }
 
 #country-code{
@@ -55,7 +87,7 @@
   form .page .field input{
     height: 100%;
     width: 100%;
-    border: 1px solid lightgrey;
+    border: 1px solid #1a1a1a;
     border-radius: 5px;
     padding-left: 15px;
     font-size: 18px;
@@ -71,6 +103,8 @@
     display: grid;
     grid-template-columns: 5rem 5rem 5rem 5rem;
     user-select: none;
+    background: white;
+    color: #1a1a1a;
     margin-bottom: 2rem;
   }
   .progress-bar .step{
@@ -81,13 +115,13 @@
   .progress-bar .step p{
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #1a1a1a;
     margin-bottom: 8px;
   }
   .progress-bar .step .bullet{
     height: 25px;
     width: 25px;
-    border: 2px solid white;
+    border: 2px solid #1a1a1a;
     display: inline-block;
     border-radius: 50%;
     position: relative;
@@ -97,8 +131,8 @@
     line-height: 25px;
   }
   .progress-bar .step .bullet.active{
-    border-color: white;
-    background: white;
+    border-color: #1a1a1a;
+    background: #1a1a1a;
   }
   .progress-bar .step .bullet span{
     position: absolute;
@@ -116,10 +150,10 @@
     right: -51px;
     height: 3px;
     width: 44px;
-    background: #262626;
+    background: #1a1a1a;
   }
   .progress-bar .step .bullet.active:after{
-    background: white;
+    background: #1a1a1a;
     transform: scaleX(0);
     transform-origin: left;
     animation: animate 0.3s linear forwards;
@@ -134,7 +168,7 @@
     display: none;
   }
   .progress-bar .step p.active{
-    color: white;
+    color: #1a1a1a;
     transition: 0.2s linear;
   }
   .progress-bar .step .check{
@@ -147,7 +181,7 @@
   }
   .progress-bar .step .check.active{
     display: block;
-    color: #fff;
+    color: #1a1a1a;
   }
 
   .book{

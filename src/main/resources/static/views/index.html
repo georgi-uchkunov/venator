@@ -75,33 +75,34 @@
 			</div>
 		</div>
 
-		<div class = "book">
-            <form class = "book-form">
-                <div class = "form-item">
-                    <label for = "checkin-date">Check In Date: </label>
-                    <input type = "date" id = "checkin-date">
-                </div>
-                <div class = "form-item">
-                    <label for = "checkout-date">Check Out Date: </label>
-                    <input type = "date" id = "checkout-date">
-                </div>
-                <div class = "form-item">
-                    <label for = "adult">Adults: </label>
-                    <input type = "number" min = "1" value = "1" id = "adult">
-                </div>
-                <div class = "form-item">
-                    <label for = "children">Children: </label>
-                    <input type = "number" min = "0" value = "0" id = "children">
-                </div>
-                <div class = "form-item">
-                    <label for = "rooms">Rooms: </label>
-                    <input type = "number" min = "1" value = "1" id = "rooms">
-                </div>
-                <div class = "form-item">
-                    <button class="btn book-button btn-outline-light" data-toggle="modal" data-target="#reservationModalOne">Book now</button>
-                </div>
-            </form>
-        </div>
+		<div class="book">
+			<form class="book-form">
+				<div class="form-item">
+					<label for="checkin-date">Check In Date: </label>
+					<input type="date" id="checkin-date">
+				</div>
+				<div class="form-item">
+					<label for="checkout-date">Check Out Date: </label>
+					<input type="date" id="checkout-date">
+				</div>
+				<div class="form-item">
+					<label for="adult">Adults: </label>
+					<input type="number" min="1" value="1" id="adult">
+				</div>
+				<div class="form-item">
+					<label for="children">Children: </label>
+					<input type="number" min="0" value="0" id="children">
+				</div>
+				<div class="form-item">
+					<label for="rooms">Rooms: </label>
+					<input type="number" min="1" value="1" id="rooms">
+				</div>
+				<div class="form-item">
+					<button class="btn book-button btn-outline-light" type="button" data-toggle="modal"
+						data-target="#reservationModalOne">Book now</button>
+				</div>
+			</form>
+		</div>
 
 		<div class="modal draggable fade" id="reservationModalOne" tabindex="-1" role="dialog"
 			aria-labelledby="reservationModalLabel" aria-hidden="true">
@@ -135,7 +136,7 @@
 							</div>
 							<div class="step">
 								<p>
-									Date
+									Details
 								</p>
 								<div class="bullet">
 									<span>3</span>
@@ -164,8 +165,8 @@
 										type="text" required>
 									<div class="invalid-feedback" id="family-name-feedback">Please input your family
 										name.</div>
-									<div class="field">
-										<button class="btn firstNext next btn-outline-light">Next</button>
+									<div class="field first-next-field">
+										<button class="btn firstNext next btn-outline-dark">Next</button>
 									</div>
 								</div>
 								<div class="page">
@@ -423,54 +424,52 @@
 										</div>
 									</div>
 									<div class="field btns">
-										<button class="btn prev-1 prev btn-outline-light">Previous</button>
-										<button class="btn next-1 next btn-outline-light">Next</button>
+										<button class="btn first-prev prev-1 prev btn-outline-dark">Previous</button>
+										<button class="btn second-next next-1 next btn-outline-dark">Next</button>
 									</div>
 								</div>
 								<div class="page">
-									<div class="title">
-										Date of Birth:
-									</div>
 									<div class="field">
 										<div class="label">
-											Date
+											Service
 										</div>
-										<input type="text">
-									</div>
-									<div class="field">
-										<div class="label">
-											Gender
-										</div>
-										<select>
-											<option>Male</option>
-											<option>Female</option>
-											<option>Other</option>
+										<select class="form-select" id="service-select">
+											<option value="Traditional">Traditional</option>
+											<option value="Advanced">Advanced</option>
+											<option value="Luxury">Luxury</option>
 										</select>
 									</div>
-									<div class="field btns">
-										<button class="btn prev-2 prev btn-outline-light">Previous</button>
-										<button class="btn next-2 next btn-outline-light">Next</button>
+									<div class="field location-field">
+										<div class="label">
+											Location
+										</div>
+										<select class="form-select" id="location-select">
+											<option value="New York">New York</option>
+											<option value="Tokyo">Tokyo</option>
+											<option value="Paris">Paris</option>
+											<option value="London">London</option>
+											<option value="Rome">Rome</option>
+										</select>
+									</div>
+									<div class="field btns btns-three">
+										<button class="btn second-prev prev-2 prev btn-outline-dark">Previous</button>
+										<button class="btn third-next next-2 next btn-outline-dark">Next</button>
 									</div>
 								</div>
 								<div class="page">
-									<div class="title">
-										Login Details:
-									</div>
-									<div class="field">
-										<div class="label">
-											Username
-										</div>
-										<input type="text">
-									</div>
-									<div class="field">
-										<div class="label">
-											Password
-										</div>
-										<input type="password">
-									</div>
+									<label for="name-card">Name on card</label> <input
+										class="form-control feedback-form" id="name-card" name="name-card" type="text"
+										required>
+									<div class="invalid-feedback" id="name-card-feedback">Please input the name on your
+										card.</div>
+									<label for="card-number">Credit card number</label> <input
+										class="form-control feedback-form" id="card-number" name="card-number"
+										type="text" placeholder="1111-****-****-7777" required>
+									<div class="invalid-feedback" id="card-number-feedback">Please input your credit
+										card number.</div>
 									<div class="field btns">
-										<button class="btn prev-3 prev btn-outline-light">Previous</button>
-										<button class="btn submit btn-outline-light" id="submit-button">Submit</button>
+										<button class="btn third-prev prev-3 prev btn-outline-dark">Previous</button>
+										<button class="btn submit btn-outline-dark" id="submit-button" type="button">Submit</button>
 									</div>
 								</div>
 							</form>
@@ -482,7 +481,7 @@
 
 
 
-		
+
 
 
 	</section>
