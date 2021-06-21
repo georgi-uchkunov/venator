@@ -1,52 +1,86 @@
-$(function(){
-			
-			
-	$("#submit-button").on("click", function() {
+$(function () {
 
-			var checkInDateReceived = $("#checkin-date").val();
-	        var checkOutDateReceived = $("#checkout-date").val();
-	        var adults = $("#adult").val();
-	        var children = $("#children").val();
-	        var rooms = $("#rooms").val();
 
-	        var customerFirstName = $("#given-name").val();
-	        var customerLastName = $("#family-name").val();
-	        var customerEmail = $("#reservation-email").val();
-	        var countryCode = $("#country-code").val();
-	        var phoneNumber = $("#phone-number").val();
-	        var customerPhoneNumber = countryCode + phoneNumber;
-	        var servicePackage = $("#service-select").val();
-	        var location = $("#location-select").val();
-	        var nameCard = $("#name-card").val();
-	        var numberCard = $("#card-number").val();
+	$("#submit-button").on("click", function () {
 
-	        console.log(checkInDateReceived, checkOutDateReceived, adults, children, rooms, customerFirstName, customerLastName, customerEmail, customerPhoneNumber, servicePackage, location, nameCard, numberCard);
-	        
-	        $.ajax({
-				method : "POST",
-				url : "createBooking",
-				data : {
-					checkInDateReceived : checkInDateReceived,
-					checkOutDateReceived : checkOutDateReceived,
-					adults : adults,
-					children : children,
-					rooms : rooms,
-					customerFirstName : customerFirstName,
-					customerLastName : customerLastName,
-					customerEmail : customerEmail,
-					customerPhoneNumber : customerPhoneNumber,
-					servicePackage : servicePackage,
-					location : location,
-					nameCard : nameCard,
-					numberCard : numberCard
-					
-				}
-			}).done(function(response) {
-				
-				console.log(response);
-			});
-	
+		clientValidation();
+
 	})
+
+	var clientValidation = function () {
+		var $givenName = $("#given-name");
+		var $familyName = $("#family-name");
+		var $email = $("#reservation-email");
+		var $phoneNumber = $("#phone-number");
+		var $nameCard = $("#name-card");
+		var $cardNumber = $("#card-number");
+
+		var givenNameStatus = $givenName[0].classList[2];
+		var familyNameStatus = $familyName[0].classList[2];
+		var emailStatus = $email[0].classList[2];
+		var phoneNumberStatus = $phoneNumber[0].classList[2];
+		var nameCardStatus = $nameCard[0].classList[2];
+		var cardNumberStatus = $cardNumber[0].classList[2];
+
+		if (givenNameStatus == "is-valid" && familyNameStatus == "is-valid" && emailStatus == "is-valid" &&
+			phoneNumberStatus == "is-valid" && nameCardStatus == "is-valid" && cardNumberStatus == "is-valid") {
+			createBooking();
+		} else {
+			$("#reservationModalOne").modal("hide");
+			$("#reservationModalTwo").modal("show");
+		}
+
+	}
+
+	$(".alert-close").on("click", function () {
+		$("#reservationModalOne").modal("show");
+	})
+
+	var createBooking = function () {
+		var checkInDateReceived = $("#checkin-date").val();
+		var checkOutDateReceived = $("#checkout-date").val();
+		var adults = $("#adult").val();
+		var children = $("#children").val();
+		var rooms = $("#rooms").val();
+
+		var customerFirstName = $("#given-name").val();
+		var customerLastName = $("#family-name").val();
+		var customerEmail = $("#reservation-email").val();
+		var countryCode = $("#country-code").val();
+		var phoneNumber = $("#phone-number").val();
+		var customerPhoneNumber = countryCode + phoneNumber;
+		var servicePackage = $("#service-select").val();
+		var location = $("#location-select").val();
+		var nameCard = $("#name-card").val();
+		var numberCard = $("#card-number").val();
+
+		$.ajax({
+			method: "POST",
+			url: "createBooking",
+			data: {
+				checkInDateReceived: checkInDateReceived,
+				checkOutDateReceived: checkOutDateReceived,
+				adults: adults,
+				children: children,
+				rooms: rooms,
+				customerFirstName: customerFirstName,
+				customerLastName: customerLastName,
+				customerEmail: customerEmail,
+				customerPhoneNumber: customerPhoneNumber,
+				servicePackage: servicePackage,
+				location: location,
+				nameCard: nameCard,
+				numberCard: numberCard
+
+			}
+		}).done(function (response) {
+			setTimeout(function () {
+				$("#reservationModalOne").modal("hide");
+				$("#reservationModalThree").modal("show");
+			}, 800);
+			console.log(response);
+		});
+	}
 
 	$("#given-name").on('change', function () {
 		var $givenName = $("#given-name");
@@ -64,7 +98,7 @@ $(function(){
 			$givenNameFeedback[0].css({
 				'display': 'block'
 			})
-	
+
 		}
 	})
 
@@ -84,7 +118,7 @@ $(function(){
 			$familyNameFeedback[0].css({
 				'display': 'block'
 			})
-	
+
 		}
 	})
 
@@ -145,7 +179,7 @@ $(function(){
 			$nameCardFeedback[0].css({
 				'display': 'block'
 			})
-	
+
 		}
 	})
 
@@ -161,8 +195,8 @@ $(function(){
 		var jcbValidation = /^(?:2131|1800|35[0-9]{3})[0-9]{11}$/;
 		var dinersClubValidation = /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/;
 		if (mastercardValidation.test(cardNumber) || americanExpressValidation.test(cardNumber) || visaValidation.test(cardNumber)
-		|| discoverValidation.test(cardNumber) || maestroValidation.test(cardNumber) || jcbValidation.test(cardNumber)
-		|| dinersClubValidation.test(cardNumber)) {
+			|| discoverValidation.test(cardNumber) || maestroValidation.test(cardNumber) || jcbValidation.test(cardNumber)
+			|| dinersClubValidation.test(cardNumber)) {
 			$cardNumber[0].classList.remove('is-invalid');
 			$cardNumber[0].classList.add('is-valid');
 			$cardNumberFeedback[0].css({

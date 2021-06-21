@@ -222,6 +222,14 @@ var swiperTestimonials = new Swiper('.testimonials-container', {
 	initialSlide: 3,
 });
 
+$('.modal.draggable>.modal-dialog').draggable({
+	cursor : 'move',
+	handle : '.modal-header'
+});
+
+$('.modal.draggable>.modal-dialog>.modal-content>.modal-header').css(
+		'cursor', 'move');
+
 $("#name").on('change', function () {
 	var $name = $("#name");
 	var $nameFeedback = $("#name-feedback");
