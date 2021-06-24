@@ -22,8 +22,11 @@ $(function () {
 		var nameCardStatus = $nameCard[0].classList[2];
 		var cardNumberStatus = $cardNumber[0].classList[2];
 
+		var checkInDateReceived = $("#checkin-date").val();
+		var checkOutDateReceived = $("#checkout-date").val();
+
 		if (givenNameStatus == "is-valid" && familyNameStatus == "is-valid" && emailStatus == "is-valid" &&
-			phoneNumberStatus == "is-valid" && nameCardStatus == "is-valid" && cardNumberStatus == "is-valid") {
+			phoneNumberStatus == "is-valid" && nameCardStatus == "is-valid" && cardNumberStatus == "is-valid" && checkInDateReceived != "" && checkOutDateReceived != "") {
 			createBooking();
 		} else {
 			$("#reservationModalOne").modal("hide");
@@ -76,10 +79,44 @@ $(function () {
 		}).done(function (response) {
 			setTimeout(function () {
 				$("#reservationModalOne").modal("hide");
-				$("#reservationModalThree").modal("show");
+				showReservationID(response);
 			}, 800);
 			console.log(response);
 		});
+	}
+
+	var showReservationID = function(response){
+		var id = response.id;
+		var reservationID =id.slice(id.length-6);
+		$("#booking-id").text(reservationID);
+		$("#reservationModalThree").modal("show");
+		
+	}
+	
+	$(".success-close").on("click", function () {
+
+		window.location.reload();
+
+	})
+	
+	var resetData = function(){
+		$("#checkin-date").reset();
+		$("#checkout-date").reset();
+		$("#adult").reset();
+		$("#children").reset();
+		$("#rooms").reset();
+		
+		
+		$("#given-name").reset();
+		$("#family-name").reset();
+		$("#reservation-email").reset();
+		$("#country-code").reset();
+		$("#phone-number").reset();
+		$("#service-select").reset();
+		$("#location-select").reset();
+		$("#name-card").reset();
+		$("#card-number").reset();
+		
 	}
 
 	$("#given-name").on('change', function () {
@@ -184,9 +221,12 @@ $(function () {
 	})
 
 	$("#card-number").on('change', function () {
+		
 		var $cardNumber = $("#card-number");
+		var cardNumberValue = $cardNumber.val();
+		var cardNumber = cardNumberValue.replace(/-|\s/g,"");
 		var $cardNumberFeedback = $("#card-number-feedback");
-		var cardNumber = $cardNumber.val();
+	
 		var mastercardValidation = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
 		var americanExpressValidation = /^3[47][0-9]{13}$/;
 		var visaValidation = /^4[0-9]{12}(?:[0-9]{3})?$/;
