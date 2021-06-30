@@ -524,7 +524,14 @@
 						</button>
 					</div>
 					<div class="modal-body">
-
+						<div class="form-item">
+							<label for="reservation-number">Reservation ID </label> <input
+								class="form-control feedback-form" id="reservation-number" name="reservation-number"
+								type="text" required>
+							<div class="invalid-feedback" id="reservation-number-feedback">Please enter a valid
+								reservation</div>
+							<button class="btn search btn-outline-dark" id="search-button">Search</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -939,6 +946,7 @@
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="../javascript/index.js"></script>
 	<script src="../javascript/reservation.js"></script>
+	<script src="../javascript/reservation_search.js"></script>
 	<script src="../javascript/booking.js"></script>
 
 </body>
