@@ -464,7 +464,7 @@
 										card.</div>
 									<label for="card-number">Credit card number</label> <input
 										class="form-control feedback-form" id="card-number" name="card-number"
-										type="text" placeholder="1111-****-****-7777" required>
+										type="text" required>
 									<div class="invalid-feedback" id="card-number-feedback">Please input your credit
 										card number.</div>
 									<div class="field btns">
@@ -532,6 +532,38 @@
 								reservation</div>
 							<button class="btn search btn-outline-dark" id="search-button">Search</button>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal draggable fade" id="editReservationModalTwo" tabindex="-1" role="dialog"
+			aria-labelledby="reservationModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close success-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="alert-search">No reservation with this ID</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal draggable fade" id="successful-feedback-modal" tabindex="-1" role="dialog"
+			aria-labelledby="reservationModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close success-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p class="thank-you-message">Thank you for your feedback!</p>
 					</div>
 				</div>
 			</div>
@@ -839,7 +871,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12 form-group d-flex justify-content-end">
-						<button id="sumbit-comment" type="button" class="btn btn-primary">Send</button>
+						<button id="submit-comment" type="button" class="btn btn-primary">Send</button>
 					</div>
 				</div>
 			</div>
@@ -948,5 +980,6 @@
 	<script src="../javascript/reservation.js"></script>
 	<script src="../javascript/reservation_search.js"></script>
 	<script src="../javascript/booking.js"></script>
+	<script src="../javascript/comment.js"></script>
 
 </body>

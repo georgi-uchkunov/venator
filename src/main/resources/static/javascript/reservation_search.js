@@ -34,7 +34,6 @@ $(function () {
         if(reservationNumberStatus == "is-valid"){
             $("#editReservationModal").modal("hide");
             getReservation();
-            //getAllBookings();
         } else{
             $("#editReservationModal").modal("hide");
         }
@@ -56,7 +55,6 @@ $(function () {
 				
 			}, 800);
 			console.log(response);
-			console.log(1);
 		});
     }
     
@@ -67,7 +65,6 @@ $(function () {
 			url: "getAllBookings",
 		}).done(function (response) {
 			console.log(response);
-			console.log(2);
 		});
     }
 

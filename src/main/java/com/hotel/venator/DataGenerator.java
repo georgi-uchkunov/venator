@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hotel.venator.models.Booking;
+import com.hotel.venator.models.Comment;
 import com.hotel.venator.models.Customer;
 import com.hotel.venator.models.Role;
 import com.hotel.venator.models.Room;
 import com.hotel.venator.models.User;
 import com.hotel.venator.repos.BookingRepository;
+import com.hotel.venator.repos.CommentRepository;
 import com.hotel.venator.repos.CustomerRepository;
 import com.hotel.venator.repos.RoleRepository;
 import com.hotel.venator.repos.RoomRepository;
@@ -26,15 +28,17 @@ public class DataGenerator {
 	private BookingRepository bookingRepository;
 	private CustomerRepository customerRepository;
 	private RoomRepository roomRepository;
+	private CommentRepository commentRepository;
 
 	@Autowired
 	public DataGenerator(RoleRepository roleRepository, UserRepository userRepository,
-			BookingRepository bookingRepository, CustomerRepository customerRepository, RoomRepository roomRepository) {
+			BookingRepository bookingRepository, CustomerRepository customerRepository, RoomRepository roomRepository, CommentRepository commentRepository) {
 		this.roleRepository = roleRepository;
 		this.userRepository = userRepository;
 		this.bookingRepository = bookingRepository;
 		this.customerRepository = customerRepository;
 		this.roomRepository = roomRepository;
+		this.commentRepository = commentRepository;
 	}
 
 	@PostConstruct
@@ -82,6 +86,16 @@ public class DataGenerator {
 			roomRepository.save(new Room((byte) 10, (byte) 1, "Traditional", true));
 			roomRepository.save(new Room((byte) 20, (byte) 2, "Luxurious", false));
 			roomRepository.save(new Room((byte) 30, (byte) 3, "Imperial", true));
+		}
+	}
+	
+	@PostConstruct
+	public void loadExampleComments() {
+		if (commentRepository.count() == 0) {
+			commentRepository.save(new Comment("Adam", "test1@test.com", "Wow!"));
+			commentRepository.save(new Comment("Bob", "test2@test.com", "Dude!"));
+			commentRepository.save(new Comment("Charlie", "test3@test.com", "Awesome!!"));
+			
 		}
 	}
 

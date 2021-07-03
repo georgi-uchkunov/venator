@@ -287,4 +287,8 @@ $("#comment").on('change', function () {
 			'display': 'block'
 		})
 	}
+	
+	$("close").on("click", function () {
+		event.preventDefault()
+	})
 })
