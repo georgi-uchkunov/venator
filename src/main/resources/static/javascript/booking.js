@@ -184,7 +184,7 @@ $(function () {
 		var $phoneNumber = $("#phone-number");
 		var fullNumber = $countryCode.val() + $phoneNumber.val();
 		var $phoneNumberFeedback = $("#phone-number-feedback");
-		var validation = /^\d{10}$/;
+		var validation = /^\d{12}$/;
 		if (validation.test(fullNumber)) {
 			$phoneNumber[0].classList.remove('is-invalid');
 			$phoneNumber[0].classList.add('is-valid');
