@@ -52,10 +52,27 @@ $(function () {
 		}).done(function (response) {
 			setTimeout(function () {
 				$("#editReservationModal").modal("hide");
-				
+				showReservation(response, id);
 			}, 800);
 			console.log(response);
 		});
+    }
+    
+    var showReservation = function(response, id){
+    	
+    	$(".reservation-number").text(id);
+    	$(".reservation-check-in").text(response.checkInDate);
+    	$(".reservation-check-out").text(response.checkOutDate);
+    	$(".reservation-adults").text(response.adults);
+    	$(".reservation-children").text(response.children);
+    	$(".reservation-rooms").text(response.rooms);
+    	$(".reservation-service-package").text(response.servicePackage);
+    	$(".reservation-first-name").text(response.customerFirstName);
+    	$(".reservation-last-name").text(response.customerLastName);
+    	$(".reservation-location").text(response.location);
+    	
+    	$("#successful-search-modal").modal("show");
+    	
     }
     
     var getAllBookings = function(){

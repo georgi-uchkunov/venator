@@ -301,3 +301,47 @@
         padding-right: 20px;
     }
 }
+
+#successful-search-modal .modal-body{
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+#successful-search-modal .modal-header{
+	font-weight: bold;
+    font-size: large;
+}
+
+#successful-search-modal .modal-content{
+	width: 46rem;
+	height: 23rem;
+	justify-content: center
+}
+
+.reservation-number{
+	margin-left: 1rem;
+}
+
+.edit-icon-image{
+	width: 20px;
+}
+
+.search-fields{
+  display: grid;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+.button-field{
+	margin-top: 1.8rem;
+}
+
+#edit-icon:hover {
+    cursor: pointer;
+}
+
+#confirm-button{
+  margin-left: 510px;
+}

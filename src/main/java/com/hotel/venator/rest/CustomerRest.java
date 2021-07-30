@@ -6,25 +6,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.venator.models.Customer;
-import com.hotel.venator.repos.CustomerRepository;
+import com.hotel.venator.services.CustomerService;
 
 @RestController
 public class CustomerRest{
 	
-	private CustomerRepository repository;
+	private CustomerService customerService;
 	
 	@Autowired
-	public CustomerRest(CustomerRepository repository) {
-		this.repository = repository;
+	public CustomerRest(CustomerService customerService) {
+		this.customerService = customerService;
 	}
 	
 	@PostMapping("/addExampleCustomers")
     public ResponseEntity<Customer> addCustomers() {
-
-		repository.save(new Customer("Alice", "Smith"));
-	    repository.save(new Customer("Bob", "Smith"));
-	    return null;
-		
-
+		return customerService.addCustomers();
     }
 }
