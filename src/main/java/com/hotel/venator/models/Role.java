@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
 
+
 public class Role implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -13,62 +14,63 @@ public class Role implements Serializable{
 	private String description;
 	private long version;
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((code == null) ? 0 : code.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Role other = (Role) obj;
+		if (code == null) {
+			if (other.code != null)
+				return false;
+		} else if (!code.equals(other.code))
+			return false;
+		return true;
+	}
+
 	public Role() {
 
 	}
 
-	/**
-	 * @return the id
-	 */
 	public String getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the code
-	 */
 	public String getCode() {
 		return code;
 	}
 
-	/**
-	 * @param code the code to set
-	 */
 	public void setCode(String code) {
 		this.code = code;
 	}
 
-	/**
-	 * @return the description
-	 */
 	public String getDescription() {
 		return description;
 	}
 
-	/**
-	 * @param description the description to set
-	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	/**
-	 * @return the version
-	 */
 	public long getVersion() {
 		return version;
 	}
 
-	/**
-	 * @param version the version to set
-	 */
 	public void setVersion(long version) {
 		this.version = version;
 	}

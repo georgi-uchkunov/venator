@@ -8,6 +8,7 @@ import com.hotel.venator.models.Role;
 @Repository
 public interface RoleRepository extends MongoRepository<Role, String> {
 
+	Role findByCode(final String code);
   
 
 }
