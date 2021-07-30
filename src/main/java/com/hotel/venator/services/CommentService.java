@@ -16,33 +16,37 @@ import com.hotel.venator.repos.CommentRepository;
 
 @Service
 public class CommentService {
-	
-private CommentRepository commentRepository;
-	
+
+	private CommentRepository commentRepository;
+
 	@Autowired
 	public CommentService(CommentRepository commentRepository) {
 		this.commentRepository = commentRepository;
 	}
-	
+
 	public Comment comment(@RequestParam(name = "commenterName") String commenterName,
 			@RequestParam(name = "commenterEmail") String commenterEmail,
 			@RequestParam(name = "commenterComment") String commenterComment) {
 		final Comment newComment = new Comment(commenterName, commenterEmail, commenterComment);
-			return commentRepository.save(newComment);
+		return commentRepository.save(newComment);
 	}
-	
+
 	public Page<Comment> getAllComments(Pageable pageable) {
-        return commentRepository.findAll(pageable);
-    }
-	
+		return commentRepository.findAll(pageable);
+	}
+
 	public ResponseEntity<String> deleteComment(@RequestParam(name = "id") String id, HttpSession session) {
 		List<com.hotel.venator.models.Comment> comments = commentRepository.findAll();
-		Comment commentForDelete = comments.stream().filter(comment -> id == comment.getId()).findFirst()
-				.orElse(null);
+		Comment commentForDelete = comments.stream().filter(comment -> id == comment.getId()).findFirst().orElse(null);
 		if (null != commentForDelete) {
 			comments.remove(commentForDelete);
 			commentRepository.deleteById(commentForDelete.getId());
 		}
 		return ResponseEntity.ok().body("Comment with id: " + id + " has been deleted");
+	}
+
+	public Comment loadExampleComment() {
+		Comment exampleComment = new Comment("Adam", "test1@test.com", "Awesome!");
+		return commentRepository.save(exampleComment);
 	}
 }

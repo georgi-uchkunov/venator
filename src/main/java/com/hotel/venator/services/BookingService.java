@@ -39,7 +39,7 @@ public class BookingService {
 				numberCard);
 		return bookingRepository.save(newBooking);
 	}
-	
+
 	public ResponseEntity<List<Booking>> getAllBookings() {
 		List<Booking> bookings = bookingRepository.findAll();
 		if (bookings.isEmpty())
@@ -47,7 +47,7 @@ public class BookingService {
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(bookings);
 	}
-	
+
 	public ResponseEntity<Booking> getSelectedBookingById(@RequestParam(name = "id") String id) {
 		List<Booking> bookings = bookingRepository.findAll();
 		for (int i = 0; i < bookings.size(); i++) {
@@ -59,5 +59,12 @@ public class BookingService {
 
 		}
 		return null;
+	}
+
+	public Booking loadExampleBooking() {
+		Booking exampleBooking = new Booking(LocalDate.now(), LocalDate.now().plusWeeks(1), (byte) 3, (byte) 3,
+				(short) 3, "Advanced", "Adam", "Johnson", "adamjohnson@test.com", "359881234567", "Tokyo",
+				"Adam J Johnson", "3700 0000 0000 002");
+		return bookingRepository.save(exampleBooking);
 	}
 }
