@@ -1,5 +1,7 @@
 package com.hotel.venator.rest;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +34,8 @@ public class CommentRest{
 	}
 	
 	@GetMapping("/getAllComments")
-    public Page<Comment> getAllComments(Pageable pageable) {
-		return commentService.getAllComments(pageable);
+    public ResponseEntity<List<Comment>> getAllComments() {
+		return commentService.getAllComments();
     }
 	
 	@PostMapping("/deleteComment")

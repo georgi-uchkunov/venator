@@ -2,6 +2,7 @@ package com.hotel.venator.services;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,16 +50,13 @@ public class BookingService {
 	}
 
 	public ResponseEntity<Booking> getSelectedBookingById(@RequestParam(name = "id") String id) {
-		List<Booking> bookings = bookingRepository.findAll();
-		for (int i = 0; i < bookings.size(); i++) {
-			Booking currentBooking = bookings.get(i);
-			String reservationNumber = currentBooking.getId().substring(18);
-			if (reservationNumber.equals(id)) {
-				return ResponseEntity.status(HttpStatus.CREATED).body(currentBooking);
-			}
-
+		Optional<Booking> selectedBooking = bookingRepository.findById(id);
+		Booking realBooking = selectedBooking.get();
+		String reservationNumber = realBooking.getId().substring(18);
+		if (reservationNumber.equals(id)) {
+			return ResponseEntity.status(HttpStatus.CREATED).body(realBooking);
 		}
-		return null;
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 	}
 
 	public Booking loadExampleBooking() {
