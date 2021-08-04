@@ -21,7 +21,7 @@ https://venator-hotel.herokuapp.com
 
 ### Languages and Tools
 
-<img align="center" alt="Java" width="31px" src="https://raw.githubusercontent.com/manuelbieh/logo-file-icons/master/icons/java.svg" />&nbsp;&nbsp;&nbsp;  
+<img align="center" alt="Java" width="31px" src="https://raw.githubusercontent.com/manuelbieh/logo-file-icons/master/icons/java.svg" />&nbsp;&nbsp;&nbsp;
 <img align="center" alt="JavaScript" width="31px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />&nbsp;&nbsp;&nbsp;‎
 <img align="center" alt="HTML5" width="31px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />‏‏‎&nbsp;&nbsp;&nbsp; ‎‏‏‎ ‎
 <img align="center" alt="CSS3" width="31px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />&nbsp;&nbsp;&nbsp;
@@ -35,8 +35,3 @@ https://venator-hotel.herokuapp.com
 <img align="center" alt="Eclipse" width="31px" src="https://raw.githubusercontent.com/leungwensen/svg-icon/master/dist/svg/logos/eclipse.svg" />&nbsp;&nbsp;&nbsp;
 <img align="center" alt="Git" width="31px" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" />&nbsp;&nbsp;&nbsp;
 <img align="center" alt="GitHub" width="31px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
-
-
-
-
-[website]: https://venator-hotel.herokuapp.com
