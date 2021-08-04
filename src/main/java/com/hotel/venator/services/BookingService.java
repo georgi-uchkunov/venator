@@ -50,13 +50,16 @@ public class BookingService {
 	}
 
 	public ResponseEntity<Booking> getSelectedBookingById(@RequestParam(name = "id") String id) {
-		Optional<Booking> selectedBooking = bookingRepository.findById(id);
-		Booking realBooking = selectedBooking.get();
-		String reservationNumber = realBooking.getId().substring(18);
-		if (reservationNumber.equals(id)) {
-			return ResponseEntity.status(HttpStatus.CREATED).body(realBooking);
+		List<Booking> bookings = bookingRepository.findAll();
+		for (int i = 0; i < bookings.size(); i++) {
+			Booking currentBooking = bookings.get(i);
+			String reservationNumber = currentBooking.getId().substring(18);
+			if (reservationNumber.equals(id)) {
+				return ResponseEntity.status(HttpStatus.CREATED).body(currentBooking);
+			}
+
 		}
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		return null;
 	}
 
 	public Booking loadExampleBooking() {
