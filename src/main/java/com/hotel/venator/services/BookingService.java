@@ -2,7 +2,6 @@ package com.hotel.venator.services;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,13 +16,15 @@ import com.hotel.venator.repos.BookingRepository;
 public class BookingService {
 
 	private BookingRepository bookingRepository;
+	private RoomService roomService;
 
 	@Autowired
-	public BookingService(BookingRepository bookingRepository) {
+	public BookingService(BookingRepository bookingRepository, RoomService roomService) {
 		this.bookingRepository = bookingRepository;
+		this.roomService = roomService;
 	}
 
-	public Booking createBooking(@RequestParam(name = "checkInDateReceived") String checkInDateReceived,
+	public ResponseEntity<Booking> createBooking(@RequestParam(name = "checkInDateReceived") String checkInDateReceived,
 			@RequestParam(name = "checkOutDateReceived") String checkOutDateReceived,
 			@RequestParam(name = "adults") byte adults, @RequestParam(name = "children") byte children,
 			@RequestParam(name = "rooms") short rooms, @RequestParam(name = "servicePackage") String servicePackage,
@@ -35,10 +36,16 @@ public class BookingService {
 			@RequestParam(name = "numberCard") String numberCard) {
 		LocalDate checkInDate = LocalDate.parse(checkInDateReceived);
 		LocalDate checkOutDate = LocalDate.parse(checkOutDateReceived);
-		final Booking newBooking = new Booking(checkInDate, checkOutDate, adults, children, rooms, servicePackage,
-				customerFirstName, customerLastName, customerEmail, customerPhoneNumber, location, nameCard,
-				numberCard);
-		return bookingRepository.save(newBooking);
+		boolean isRequestedRoomAvailable = roomService.isRequestedRoomAvailable(location, servicePackage, checkInDate);
+		if(isRequestedRoomAvailable != false) {
+			final Booking newBooking = new Booking(checkInDate, checkOutDate, adults, children, rooms, servicePackage,
+					customerFirstName, customerLastName, customerEmail, customerPhoneNumber, location, nameCard,
+					numberCard);
+			roomService.bookRequestedRoom(location, servicePackage, checkInDate, checkOutDate);
+			return ResponseEntity.status(HttpStatus.CREATED).body(bookingRepository.save(newBooking));
+		}
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		
 	}
 
 	public ResponseEntity<List<Booking>> getAllBookings() {

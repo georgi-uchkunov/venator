@@ -1,6 +1,8 @@
 package com.hotel.venator.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+
 import org.springframework.data.annotation.Id;
 
 
@@ -11,6 +13,8 @@ public class Room implements Serializable {
 	@Id
 	public String id;
 	public String servicePackage;
+	public LocalDate checkInDate;
+	public LocalDate checkOutDate;
 	public String location;
 	public boolean isBooked;
 
@@ -18,11 +22,13 @@ public class Room implements Serializable {
 
 	}
 
-	public Room(String servicePackage, String location, boolean isBooked) {
+	public Room(String servicePackage, String location, boolean isBooked, LocalDate checkInDate, LocalDate checkOutDate) {
 		super();
 		this.servicePackage = servicePackage;
 		this.location = location;
 		this.isBooked = isBooked;
+		this.checkInDate = checkInDate;
+		this.checkOutDate = checkOutDate;
 	}
 
 	public String getId() {
@@ -41,6 +47,21 @@ public class Room implements Serializable {
 		this.servicePackage = servicePackage;
 	}
 	
+	public LocalDate getCheckInDate() {
+		return checkInDate;
+	}
+
+	public void setCheckInDate(LocalDate checkInDate) {
+		this.checkInDate = checkInDate;
+	}
+
+	public LocalDate getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutDate(LocalDate checkOutDate) {
+		this.checkOutDate = checkOutDate;
+	}
 
 	public String getLocation() {
 		return location;

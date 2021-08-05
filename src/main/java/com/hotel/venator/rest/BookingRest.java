@@ -26,7 +26,7 @@ public class BookingRest {
 	}
 
 	@PostMapping(value = "/createBooking")
-	public Booking createBooking(@RequestParam(name = "checkInDateReceived") String checkInDateReceived,
+	public ResponseEntity<Booking> createBooking(@RequestParam(name = "checkInDateReceived") String checkInDateReceived,
 			@RequestParam(name = "checkOutDateReceived") String checkOutDateReceived,
 			@RequestParam(name = "adults") byte adults, @RequestParam(name = "children") byte children,
 			@RequestParam(name = "rooms") short rooms, @RequestParam(name = "servicePackage") String servicePackage,
