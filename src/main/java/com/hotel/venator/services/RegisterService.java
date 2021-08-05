@@ -1,7 +1,6 @@
 package com.hotel.venator.services;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,13 +39,13 @@ public class RegisterService {
 	
 	public User loadExampleAdmin() {
 		User admin = new User("admin@admin.com", "JohnS", "admin", "John", "Smith" , LocalDate.of(1981, 07, 21));
-		admin.setRoles(makeAdminRole());
+		admin.addRole(makeAdminRole());
 		return userRepository.save(admin);
 	}
 	
-	public Set<Role> makeAdminRole() {
+	public Role makeAdminRole() {
 		Role adminRole = new Role();
 		adminRole.setCode("ADMIN");
-		return (Set<Role>) roleRepository.save(adminRole);
+		return roleRepository.save(adminRole);
 	}
 }

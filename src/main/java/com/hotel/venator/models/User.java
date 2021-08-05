@@ -40,19 +40,6 @@ public class User implements Serializable {
 		this.dateOfBirth = dateOfBirth;
 		
 }
-
-	public User(String id, String email, String username, String password, String firstName, String lastName, LocalDate dateOfBirth, Set<Role> roles) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.dateOfBirth = dateOfBirth;
-		this.roles = roles;
-		
-	}
 	
 	public String getId() {
 		return id;
