@@ -1,11 +1,8 @@
 package com.hotel.venator.rest;
 
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,15 +48,9 @@ public class BookingRest {
 		return bookingService.getSelectedBookingById(id);
 	}
 
-	private void validateReservationNumber(String id) {
-		String regex = "^[a-z0-9]+$";
-		Pattern regexPattern = Pattern.compile(regex);
-		Matcher regexMatcher = regexPattern.matcher(id);
-		if (regexMatcher.matches() && id != null) {
-			getSelectedBookingById(id);
-		} else {
-			ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-		}
+	@PostMapping("/seeReasonForDeniedBooking")
+	public ResponseEntity<String> seeReasonForDeniedBooking(@RequestParam(name = "location") String location) {
+		return bookingService.seeReasonForDeniedBooking(location);
 
 	}
 }

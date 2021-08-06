@@ -77,11 +77,16 @@ $(function () {
 
 			}
 		}).done(function (response) {
-			setTimeout(function () {
+			if(response.nameCard == nameCard){
+				setTimeout(function () {
+					$("#reservationModalOne").modal("hide");
+					showReservationID(response);
+				}, 800);
+			} else {
 				$("#reservationModalOne").modal("hide");
-				showReservationID(response);
-			}, 800);
-			console.log(response);
+				seeReasonForDeniedBooking(location);
+			}
+			
 		});
 	}
 
@@ -98,6 +103,19 @@ $(function () {
 		window.location.reload();
 
 	})
+	
+	var seeReasonForDeniedBooking = function(location){
+		$.ajax({
+			method: "POST",
+			url: "seeReasonForDeniedBooking",
+			data: {
+				location : location
+			}
+		}).done(function (response) {
+			$(".reservation-unavailable-message").text(response);
+			$("#reservation-unavailable-modal").modal("show");
+		});
+	}
 	
 	var resetData = function(){
 		$("#checkin-date").reset();

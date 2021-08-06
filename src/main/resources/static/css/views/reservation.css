@@ -309,13 +309,19 @@
 
 #successful-search-modal .modal-header{
 	font-weight: bold;
-    font-size: large;
+  font-size: large;
 }
 
 #successful-search-modal .modal-content{
 	width: 46rem;
 	height: 23rem;
 	justify-content: center
+}
+
+#reservation-unavailable-modal .modal-body{
+  height: 7rem;
+  text-align: center;
+  margin-top: 1.8rem;
 }
 
 .reservation-number{

@@ -44,7 +44,18 @@ public class BookingService {
 			roomService.bookRequestedRoom(location, servicePackage, checkInDate, checkOutDate);
 			return ResponseEntity.status(HttpStatus.CREATED).body(bookingRepository.save(newBooking));
 		}
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		return ResponseEntity.status(HttpStatus.OK).build();
+		
+	}
+	
+	public ResponseEntity<String> seeReasonForDeniedBooking(@RequestParam(name = "location") String location){
+		String locationUnavailable = "We apologise, but the hotel you have chosen is fully booked.";
+		String servicePackageUnavailable = "We apologise, but there are no free rooms of your desired service level during this period.";
+		boolean isRequestedLocationUnavailable = roomService.seeIfLocationIsUnavailable(location);
+		if(isRequestedLocationUnavailable != false) {
+			return ResponseEntity.status(HttpStatus.CREATED).body(locationUnavailable);
+		}
+		return ResponseEntity.status(HttpStatus.CREATED).body(servicePackageUnavailable);
 		
 	}
 

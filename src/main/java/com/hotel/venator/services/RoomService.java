@@ -63,6 +63,17 @@ public class RoomService {
 		return null;
 	}
 
+	public boolean seeIfLocationIsUnavailable(String location) {
+		List<Room> requestedRooms = roomRepository.findRoomsByLocation(location);
+		for (int i = 0; i < requestedRooms.size(); i++) {
+			Room currentRoom = requestedRooms.get(i);
+			if (currentRoom.isBooked != true) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	public void loadAllRooms() {
 		loadAllNewYorkRooms();
 		loadAllTokyoRooms();
@@ -73,15 +84,15 @@ public class RoomService {
 
 	public void loadAllRomeRooms() {
 		for (int i = 0; i < 30; i++) {
-			Room newRoom = new Room("Traditional", "Rome", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Traditional", "Rome", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 20; i++) {
-			Room newRoom = new Room("Advanced", "Rome", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Advanced", "Rome", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 10; i++) {
-			Room newRoom = new Room("Luxury", "Rome", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Luxury", "Rome", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 
@@ -89,15 +100,15 @@ public class RoomService {
 
 	public void loadAllLondonRooms() {
 		for (int i = 0; i < 30; i++) {
-			Room newRoom = new Room("Traditional", "London", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Traditional", "London", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 20; i++) {
-			Room newRoom = new Room("Advanced", "London", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Advanced", "London", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 10; i++) {
-			Room newRoom = new Room("Luxury", "London", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Luxury", "London", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 
@@ -105,15 +116,15 @@ public class RoomService {
 
 	public void loadAllParisRooms() {
 		for (int i = 0; i < 30; i++) {
-			Room newRoom = new Room("Traditional", "Paris", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Traditional", "Paris", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 20; i++) {
-			Room newRoom = new Room("Advanced", "Paris", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Advanced", "Paris", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 10; i++) {
-			Room newRoom = new Room("Luxury", "Paris", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Luxury", "Paris", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 
@@ -121,15 +132,15 @@ public class RoomService {
 
 	public void loadAllTokyoRooms() {
 		for (int i = 0; i < 30; i++) {
-			Room newRoom = new Room("Traditional", "Tokyo", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Traditional", "Tokyo", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 20; i++) {
-			Room newRoom = new Room("Advanced", "Tokyo", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Advanced", "Tokyo", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 10; i++) {
-			Room newRoom = new Room("Luxury", "Tokyo", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Luxury", "Tokyo", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 
@@ -137,15 +148,15 @@ public class RoomService {
 
 	public void loadAllNewYorkRooms() {
 		for (int i = 0; i < 30; i++) {
-			Room newRoom = new Room("Traditional", "New York", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Traditional", "New York", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 20; i++) {
-			Room newRoom = new Room("Advanced", "New York", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Advanced", "New York", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 		for (int i = 0; i < 10; i++) {
-			Room newRoom = new Room("Luxury", "New York", false, LocalDate.now(), LocalDate.now().plusDays(3));
+			Room newRoom = new Room("Luxury", "New York", false, LocalDate.now().minusDays(7), LocalDate.now().minusDays(5));
 			roomRepository.save(newRoom);
 		}
 
