@@ -57,12 +57,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver-core</artifactId>
-			</dependency>
-
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>28.1-jre</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -78,7 +89,8 @@
 				<configuration>
 					<appName>venator-hotel</appName>
 					<processTypes>
-						<web>java $JAVA_OPTS -jar -Dserver.port=$PORT ${full-artifact-name}</web>
+						<web>java $JAVA_OPTS -jar -Dserver.port=$PORT
+							${full-artifact-name}</web>
 					</processTypes>
 				</configuration>
 			</plugin>

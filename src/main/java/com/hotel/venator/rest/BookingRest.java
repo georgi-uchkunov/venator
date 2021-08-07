@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.venator.models.Booking;
 import com.hotel.venator.services.BookingService;
 
+@RequestMapping("v1/booking")
 @RestController
 public class BookingRest {
 
@@ -22,7 +24,7 @@ public class BookingRest {
 		this.bookingService = bookingService;
 	}
 
-	@PostMapping(value = "/createBooking")
+	@PostMapping(value = "/create_booking")
 	public ResponseEntity<Booking> createBooking(@RequestParam(name = "checkInDateReceived") String checkInDateReceived,
 			@RequestParam(name = "checkOutDateReceived") String checkOutDateReceived,
 			@RequestParam(name = "adults") byte adults, @RequestParam(name = "children") byte children,
@@ -38,17 +40,17 @@ public class BookingRest {
 				nameCard, numberCard);
 	}
 
-	@GetMapping(value = "/getAllBookings")
+	@GetMapping(value = "/get_all_bookings")
 	public ResponseEntity<List<Booking>> getAllBookings() {
 		return bookingService.getAllBookings();
 	}
 
-	@GetMapping("/getSelectedBookingById")
+	@GetMapping(value = "/get_selected_booking_by_id")
 	public ResponseEntity<Booking> getSelectedBookingById(@RequestParam(name = "id") String id) {
 		return bookingService.getSelectedBookingById(id);
 	}
 
-	@PostMapping("/seeReasonForDeniedBooking")
+	@PostMapping(value = "/see_reason_for_denied_booking")
 	public ResponseEntity<String> seeReasonForDeniedBooking(@RequestParam(name = "location") String location) {
 		return bookingService.seeReasonForDeniedBooking(location);
 

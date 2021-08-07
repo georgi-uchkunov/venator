@@ -45,7 +45,7 @@ $(function () {
 
         $.ajax({
 			method: "GET",
-			url: "getSelectedBookingById",
+			url: "v1/booking/get_selected_booking_by_id",
 			data: {
 				id : id
             }
@@ -79,9 +79,8 @@ $(function () {
     	
     	$.ajax({
 			method: "GET",
-			url: "getAllBookings",
+			url: "v1/booking/get_all_bookings"
 		}).done(function (response) {
-			console.log(response);
 		});
     }
 

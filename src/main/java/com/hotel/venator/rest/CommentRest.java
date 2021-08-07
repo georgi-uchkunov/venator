@@ -5,17 +5,17 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hotel.venator.models.Comment;
 import com.hotel.venator.services.CommentService;
 
+@RequestMapping("v1/comment")
 @RestController
 public class CommentRest{
 	
@@ -26,19 +26,19 @@ public class CommentRest{
 		this.commentService = commentService;
 	}
 	
-	@PostMapping(value = "/comment")
+	@PostMapping(value = "/post_comment")
 	public Comment comment(@RequestParam(name = "commenterName") String commenterName,
 			@RequestParam(name = "commenterEmail") String commenterEmail,
 			@RequestParam(name = "commenterComment") String commenterComment) {
 		return commentService.comment(commenterName, commenterEmail, commenterComment);
 	}
 	
-	@GetMapping("/getAllComments")
+	@GetMapping("/get_all_comments")
     public ResponseEntity<List<Comment>> getAllComments() {
 		return commentService.getAllComments();
     }
 	
-	@PostMapping("/deleteComment")
+	@PostMapping("/delete_comment")
 	public ResponseEntity<String> deleteComment(@RequestParam(name = "id") String id, HttpSession session) {
 		return commentService.deleteComment(id, session);
 	}

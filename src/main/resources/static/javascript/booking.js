@@ -59,7 +59,7 @@ $(function () {
 
 		$.ajax({
 			method: "POST",
-			url: "createBooking",
+			url: "v1/booking/create_booking",
 			data: {
 				checkInDateReceived: checkInDateReceived,
 				checkOutDateReceived: checkOutDateReceived,
@@ -107,7 +107,7 @@ $(function () {
 	var seeReasonForDeniedBooking = function(location){
 		$.ajax({
 			method: "POST",
-			url: "seeReasonForDeniedBooking",
+			url: "v1/booking/see_reason_for_denied_booking",
 			data: {
 				location : location
 			}

@@ -22,7 +22,7 @@ $(function () {
 
 		$.ajax({
 			method : "POST",
-			url : "comment",
+			url : "v1/comment/post_comment",
 			data : {
 
 				commenterEmail : email,
